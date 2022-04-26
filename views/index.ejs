@@ -1,8 +1,27 @@
 <%- include("./partials/header") -%>
 <main>
-  <div class="carCard">
-    <p>I am a card</p>
-  </div>
-  <p>this is the main</p>
+  <section id="cards">
+    <% carsList.forEach( car=>{ %>
+    <article class="carCard" key="<%= car.id %> ">
+      <div class="flex-row">
+        <p><%= car.cardId %></p>
+        <p><%= car.name %></p>
+      </div>
+      <img src="<%= car.img %> " alt="<%= car.name %> photo" />
+      <div class="flex-row">
+        <p>0-100</p>
+        <p><%= car.toOneHundred %></p>
+      </div>
+      <div class="flex-row">
+        <p>Engine Capacity</p>
+        <p><%= car.engineCapacity %></p>
+      </div>
+      <div class="flex-row">
+        <p>Horse Power</p>
+        <p><%= car.hp %></p>
+      </div>
+    </article>
+    <% }); %>
+  </section>
 </main>
 <%- include("./partials/footer") -%>

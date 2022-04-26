@@ -1,0 +1,30 @@
+<%- include("./partials/header") -%>
+<main>
+  <form action="/card" method="post">
+    <fieldset>
+      <label for="cardId"> Card Id </label>
+      <input type="text" name="cardId">
+    </fieldset>
+    <fieldset>
+      <label for="name"> Name </label>
+      <input type="text" name="name">
+    </fieldset>
+    <fieldset>
+      <label for="img"> Image URL </label>
+      <input type="url" name="img">
+    </fieldset>
+    <fieldset>
+      <label for="toOneHundred"> 0-100Km/h time (in seconds) </label>
+      <input type="number" name="toOneHundred">
+    </fieldset>
+    <fieldset>
+      <label for="engineCapacity"> Engine Capacity (cm³)</label>
+      <input type="number" name="engineCapacity">
+    </fieldset>
+    <fieldset>
+      <label for="hp"> Horse Power </label>
+      <input type="number" name="hp">
+    </fieldset>
+  </form>
+</main>
+<%- include("./partials/footer") -%>
