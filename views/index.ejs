@@ -1,7 +1,7 @@
 <%- include("./partials/header") -%>
 <main>
   <section id="cards">
-    <% carsList.forEach( car=>{ %>
+    <% cars.forEach( car=>{ %>
     <article class="carCard" key="<%= car.id %> ">
       <div class="flex-row">
         <p><%= car.cardId %></p>
@@ -10,15 +10,15 @@
       <img src="<%= car.img %> " alt="<%= car.name %> photo" />
       <div class="flex-row">
         <p>0-100</p>
-        <p><%= car.toOneHundred %></p>
+        <p><%= car.toOneHundred %> s</p>
       </div>
       <div class="flex-row">
         <p>Engine Capacity</p>
-        <p><%= car.engineCapacity %></p>
+        <p><%= car.engineCapacity %> cm³</p>
       </div>
       <div class="flex-row">
         <p>Horse Power</p>
-        <p><%= car.hp %></p>
+        <p><%= car.hp %> HP</p>
       </div>
     </article>
     <% }); %>
