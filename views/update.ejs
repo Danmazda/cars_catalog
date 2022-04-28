@@ -1,0 +1,39 @@
+<%- include("./partials/header") -%>
+<main>
+  <form action="/update" method="post" id="register">
+    <fieldset>
+      <label for="name"> Model and Manufacture</label>
+      <input type="text" name="name">
+    </fieldset>
+    <fieldset>
+      <label for="hp"> Horse Power </label>
+      <input type="number" name="hp">
+    </fieldset>
+    <fieldset>
+      <label for="maxVel"> Top speed (Km/h) </label>
+      <input type="number" name="maxVel">
+    </fieldset>
+    <fieldset>
+      <label for="toOneHundred"> 0-100Km/h time (in seconds) </label>
+      <input type="number" name="toOneHundred" step="0.1">
+    </fieldset>
+    <fieldset>
+      <label for="img"> Image URL </label>
+      <input type="url" name="img">
+    </fieldset>
+    <fieldset>
+      <label for="capacity"> Engine Capacity (cc)</label>
+      <input type="number" name="capacity" step="0.1">
+    </fieldset>
+    <fieldset>
+      <label for="cylinder"> Cylinder </label>
+      <input type="number" name="cylinder">
+    </fieldset>
+    <fieldset>
+      <label for="description"> Description </label>
+      <textarea name="description" cols="30" rows="10"></textarea>
+    </fieldset>
+    <button type="submit"> Update </button>
+  </form>
+</main>
+<%- include("./partials/footer") -%>

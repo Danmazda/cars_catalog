@@ -2,7 +2,13 @@
 <main>
   <section id="cards">
     <article class="carCard" key="<%= car.id %> ">
-      <img src="<%= car.img %> " alt="<%= car.name %> photo" />
+      <div class="flex-row">
+        <img src="<%= car.img %> " alt="<%= car.name %> photo" />
+        <div>
+          <p>Description</p>
+          <p><%= car.description %></p>
+        </div>
+      </div>
       <div class="flex-row">
         <p>Model</p>
         <p><%= car.name %></p>
@@ -15,21 +21,18 @@
         <p>Velocity</p>
         <p><%= car.maxVel %> Km/h</p>
       </div>
-      <div class="hidden">
-        <div class="flex-row">
-          <p>0-100</p>
-          <p><%= car.toOneHundred %> s</p>
-        </div>
-        <div class="flex-row">
-          <p>Capacity</p>
-          <p><%= car.capacity %></p>
-        </div>
-        <div class="flex-row">
-          <p>Cylinders</p>
-          <p><%= car.cylinder %></p>
-        </div>
-        <p>Description</p>
-        <p><%= car.description %></p>
+
+      <div class="flex-row">
+        <p>0-100</p>
+        <p><%= car.toOneHundred %> s</p>
+      </div>
+      <div class="flex-row">
+        <p>Capacity</p>
+        <p><%= car.capacity %></p>
+      </div>
+      <div class="flex-row">
+        <p>Cylinders</p>
+        <p><%= car.cylinder %></p>
       </div>
     </article>
   </section>
