@@ -3,22 +3,20 @@
   <section id="cards">
     <% cars.forEach( car=>{ %>
     <article class="carCard" key="<%= car.id %> ">
+      <a href="/details/<%= car.id %> ">
+        <img src="<%= car.img %> " alt="<%= car.name %> photo" />
+      </a>
       <div class="flex-row">
-        <p><%= car.cardId %></p>
+        <p>Model</p>
         <p><%= car.name %></p>
-      </div>
-      <img src="<%= car.img %> " alt="<%= car.name %> photo" />
-      <div class="flex-row">
-        <p>0-100</p>
-        <p><%= car.toOneHundred %> s</p>
-      </div>
-      <div class="flex-row">
-        <p>Engine Capacity</p>
-        <p><%= car.engineCapacity %> cm³</p>
       </div>
       <div class="flex-row">
         <p>Horse Power</p>
         <p><%= car.hp %> HP</p>
+      </div>
+      <div class="flex-row">
+        <p>Top speed</p>
+        <p><%= car.maxVel %> Km/h</p>
       </div>
     </article>
     <% }); %>
