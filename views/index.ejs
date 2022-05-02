@@ -2,10 +2,8 @@
 <main>
   <section id="cards">
     <% cars.forEach( car=>{ %>
-    <article class="carCard" key="<%= car.id %> ">
-      <a href="/details/<%= car.id %> ">
-        <img src="<%= car.img %> " alt="<%= car.name %> photo" />
-      </a>
+    <article class="carCard" key="<%= car.id %>">
+      <img src="<%= car.img %> " alt="<%= car.name %> photo" />
       <div class="flex-row">
         <p>Model</p>
         <p><%= car.name %></p>
@@ -18,10 +16,80 @@
         <p>Top speed</p>
         <p><%= car.maxVel %> Km/h</p>
       </div>
-      <div><a href="/delete/<%= car.id %> ">Delete</a></div>
-      <div>Update</div>
+      <i class="fa-solid fa-ellipsis-vertical openMenu"></i>
+      <div class="cardControl">
+        <div class="details">
+          <a href="/details/<%= car.id %> "> Details </a>
+        </div>
+        <div class="update">Update</div>
+        <div class="delete">Delete</div>
+      </div>
     </article>
+    <div class="deleteConfirmation">
+      <p>
+        Are you sure you want to delete this card? This action cannot be undone!
+      </p>
+      <button onclick="location.href='/delete/<%= car.id%>'" class="confirm">
+        Yes
+      </button>
+      <button class="closeConfirmation">No</button>
+    </div>
+
+    <form action="/update" method="post" class="updateForm">
+      <i class="fa-solid fa-x closeUpdate"></i>
+      <fieldset>
+        <label for="name"> Model and Manufacture</label>
+        <input type="text" name="name" value="<%= car.name %> " />
+      </fieldset>
+      <fieldset>
+        <label for="hp"> Horse Power </label>
+        <input type="number" name="hp" value="<%= car.hp %>" />
+      </fieldset>
+      <fieldset>
+        <label for="maxVel"> Top speed (Km/h) </label>
+        <input type="number" name="maxVel" value="<%=car.maxVel %>" />
+      </fieldset>
+      <fieldset>
+        <label for="toOneHundred"> 0-100Km/h time (in seconds) </label>
+        <input
+          type="number"
+          name="toOneHundred"
+          step="0.1"
+          value="<%= car.toOneHundred %>"
+        />
+      </fieldset>
+      <fieldset>
+        <label for="img"> Image URL </label>
+        <input type="url" name="img" value="<%= car.img %>" />
+      </fieldset>
+      <fieldset>
+        <label for="capacity"> Engine Capacity (cc)</label>
+        <input
+          type="number"
+          name="capacity"
+          step="0.1"
+          value="<%= car.capacity %>"
+        />
+      </fieldset>
+      <fieldset>
+        <label for="cylinder"> Cylinder </label>
+        <input type="number" name="cylinder" value="<%= car.cylinder %>" />
+      </fieldset>
+      <fieldset>
+        <label for="description"> Description </label>
+        <textarea
+          name="description"
+          cols="30"
+          rows="10"
+          value="<%= car.description %> "
+          placeholder="<%= car.description %> "
+        ></textarea>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
     <% }); %>
   </section>
 </main>
+<script></script>
+
 <%- include("./partials/footer") -%>

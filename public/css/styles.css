@@ -65,6 +65,7 @@ article.carCard img {
 section#cards {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 article.carCard {
@@ -80,25 +81,67 @@ article.carCard {
   transition: ease-in-out 0.5s;
   text-transform: capitalize;
 }
-article.carCard:hover {
-  transform: translateX(10px);
+article div.cardControl {
+  position: absolute;
+  right: 1em;
+  top: 0;
+  border-radius: 0.3em;
+  background-color: aqua;
+  display: none;
+  width: 50%;
 }
-
+.deleteConfirmation {
+  position: absolute;
+  background-color: rgb(44, 5, 124);
+  padding: 2rem;
+  right: 50%;
+  top: 50%;
+  display: none;
+  z-index: 9999;
+}
+.deleteConfirmation::backdrop {
+  background-color: rgba(0, 0, 0, 0.441);
+}
+.openMenu {
+  font-size: 2em;
+  position: absolute;
+  right: -0.4em;
+  top: -0.1em;
+  color: aliceblue;
+  padding: 0.5em;
+}
+.openMenu:hover {
+  color: darkorange;
+  cursor: pointer;
+}
+.details {
+  padding: 0.5em;
+  background-color: beige;
+}
+.update {
+  color: darkorange;
+  padding: 0.5em;
+  background-color: black;
+}
+.delete {
+  padding: 0.5em;
+  background-color: rgb(172, 3, 3);
+}
 footer {
   background-color: blanchedalmond;
   position: fixed;
   bottom: 0;
   color: black;
 }
-
-.hidden {
+.updateForm {
   display: none;
-  opacity: 0;
+}
+.closeUpdate:hover {
+  color: darkorange;
+  cursor: pointer;
 }
 .active {
-  display: block;
-  opacity: 1;
-  transition: all 1s ease-out;
+  display: block !important;
 }
 
 #register {

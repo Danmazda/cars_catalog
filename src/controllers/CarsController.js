@@ -2,9 +2,7 @@ import Car from "../models/Cars.Model.js";
 
 export const getAll = async (req, res) => {
   try {
-    const cars = await Car.findAll({
-      attributes: ["id", "img", "name", "hp", "maxVel"],
-    });
+    const cars = await Car.findAll({});
     res.render("index", { cars });
   } catch (error) {
     res.status(500).send({ err: error.message });
