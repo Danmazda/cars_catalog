@@ -3,37 +3,52 @@
   <form action="/card" method="post" id="register">
     <fieldset>
       <label for="name"> Model and Manufacture</label>
-      <input type="text" name="name">
+      <input type="text" name="name" required />
     </fieldset>
     <fieldset>
       <label for="hp"> Horse Power </label>
-      <input type="number" name="hp">
+      <input type="number" name="hp" max="2000" min="50" required />
     </fieldset>
     <fieldset>
       <label for="maxVel"> Top speed (Km/h) </label>
-      <input type="number" name="maxVel">
+      <input type="number" name="maxVel" max="400" min="20" required />
     </fieldset>
     <fieldset>
       <label for="toOneHundred"> 0-100Km/h time (in seconds) </label>
-      <input type="number" name="toOneHundred" step="0.1">
+      <input
+        type="number"
+        name="toOneHundred"
+        step="0.1"
+        max="1000"
+        min="1"
+        required
+      />
     </fieldset>
     <fieldset>
       <label for="img"> Image URL </label>
-      <input type="url" name="img">
+      <input type="url" name="img" required />
     </fieldset>
     <fieldset>
       <label for="capacity"> Engine Capacity (cc)</label>
-      <input type="number" name="capacity" step="0.1">
+      <input
+        type="number"
+        name="capacity"
+        step="0.1"
+        min="1.0"
+        max="20.0"
+        required
+      />
     </fieldset>
     <fieldset>
       <label for="cylinder"> Cylinder </label>
-      <input type="number" name="cylinder">
+      <input type="number" name="cylinder" min="1" max="22" required />
     </fieldset>
+    <label for="description"> Description </label>
+
     <fieldset>
-      <label for="description"> Description </label>
-      <textarea name="description" cols="30" rows="10"></textarea>
+      <textarea name="description" cols="30" rows="10" required></textarea>
     </fieldset>
-    <button type="submit"> Submit </button>
+    <button type="submit">Submit</button>
   </form>
 </main>
 <%- include("./partials/footer") -%>

@@ -17,7 +17,13 @@ a {
   text-decoration: none;
   color: orange;
 }
-
+#message {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  padding: 1em;
+  background-color: rgb(3, 102, 3);
+}
 header {
   display: flex;
   align-items: center;
@@ -37,9 +43,14 @@ main {
   flex-direction: column;
 }
 input {
-  padding: 0.2em;
+  padding: 0.3em;
   border-radius: 1em;
+  text-align: center;
   border: none;
+  background-color: gray;
+}
+textarea {
+  background-color: gray;
 }
 button {
   color: white;
@@ -160,6 +171,8 @@ footer {
   color: rgb(211, 185, 10);
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0.2em;
   gap: 1em;
 }
 .updateForm {
@@ -167,6 +180,7 @@ footer {
   position: absolute;
   padding: 0.5em;
   display: flex;
+  gap: 0.5em;
   flex-direction: column;
   align-items: stretch center;
   border: 2px solid white;
@@ -195,10 +209,16 @@ footer {
 #register {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   gap: 1em;
+  padding: 1em;
+  text-align: center;
 }
 #register fieldset {
   border: none;
+}
+#register fieldset input {
+  width: 100%;
+}
+#register fieldset textarea {
+  width: 100%;
 }

@@ -1,5 +1,8 @@
 <%- include("./partials/header") -%>
 <main>
+  <% if(message != undefined){ %>
+  <div id="message"><%= message %></div>
+  <% } %>
   <section id="cards">
     <% cars.forEach( car=>{ %>
     <article class="carCard" key="<%= car.id %>">
@@ -42,15 +45,29 @@
       <i class="fa-solid fa-x closeUpdate"></i>
       <fieldset>
         <label for="name"> Model and Manufacture</label>
-        <input type="text" name="name" value="<%= car.name %> " />
+        <input type="text" name="name" value="<%= car.name %> " required />
       </fieldset>
       <fieldset>
         <label for="hp"> Horse Power </label>
-        <input type="number" name="hp" value="<%= car.hp %>" />
+        <input
+          type="number"
+          name="hp"
+          value="<%= car.hp %>"
+          max="2000"
+          min="50"
+          required
+        />
       </fieldset>
       <fieldset>
         <label for="maxVel"> Top speed (Km/h) </label>
-        <input type="number" name="maxVel" value="<%=car.maxVel %>" />
+        <input
+          type="number"
+          name="maxVel"
+          value="<%=car.maxVel %>"
+          max="400"
+          min="20"
+          required
+        />
       </fieldset>
       <fieldset>
         <label for="toOneHundred"> 0-100Km/h time (in seconds) </label>
@@ -59,6 +76,9 @@
           name="toOneHundred"
           step="0.1"
           value="<%= car.toOneHundred %>"
+          max="1000"
+          min="1"
+          required
         />
       </fieldset>
       <fieldset>
@@ -72,15 +92,25 @@
           name="capacity"
           step="0.1"
           value="<%= car.capacity %>"
+          min="1.0"
+          max="20.0"
+          required
         />
       </fieldset>
       <fieldset>
         <label for="cylinder"> Cylinder </label>
-        <input type="number" name="cylinder" value="<%= car.cylinder %>" />
+        <input
+          type="number"
+          name="cylinder"
+          value="<%= car.cylinder %>"
+          min="1"
+          max="22"
+          required
+        />
       </fieldset>
       <label for="description"> Description </label>
       <fieldset>
-        <textarea name="description" cols="30" rows="10">
+        <textarea name="description" cols="30" rows="10" required>
  <%= car.description %></textarea
         >
       </fieldset>
@@ -89,6 +119,13 @@
     <% }); %>
   </section>
 </main>
-<script></script>
+<script>
+  const message = document.querySelector("#message");
+  if (message) {
+    setTimeout(() => {
+      message.style = "display: none;";
+    }, 2000);
+  }
+</script>
 
 <%- include("./partials/footer") -%>
