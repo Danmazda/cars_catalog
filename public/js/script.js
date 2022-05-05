@@ -8,6 +8,7 @@ const closeConfirmation = document.querySelectorAll(".closeConfirmation");
 const openUpdateModals = document.querySelectorAll(".update");
 const updateForms = document.querySelectorAll(".updateForm");
 const closeUpdateModals = document.querySelectorAll(".closeUpdate");
+// description
 
 openUpdateModals.forEach((openUpdateModal, index) => {
   openUpdateModal.addEventListener("click", () => {

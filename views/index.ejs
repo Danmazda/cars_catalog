@@ -16,7 +16,10 @@
         <p>Top speed</p>
         <p><%= car.maxVel %> Km/h</p>
       </div>
-      <i class="fa-solid fa-ellipsis-vertical openMenu"></i>
+      <i
+        class="fa-solid fa-ellipsis-vertical openMenu"
+        title="Click for menu"
+      ></i>
       <div class="cardControl">
         <div class="details">
           <a href="/details/<%= car.id %> "> Details </a>
@@ -35,7 +38,7 @@
       <button class="closeConfirmation">No</button>
     </div>
 
-    <form action="/update" method="post" class="updateForm">
+    <form action="/update/<%= car.id %>" method="post" class="updateForm">
       <i class="fa-solid fa-x closeUpdate"></i>
       <fieldset>
         <label for="name"> Model and Manufacture</label>
@@ -75,15 +78,11 @@
         <label for="cylinder"> Cylinder </label>
         <input type="number" name="cylinder" value="<%= car.cylinder %>" />
       </fieldset>
+      <label for="description"> Description </label>
       <fieldset>
-        <label for="description"> Description </label>
-        <textarea
-          name="description"
-          cols="30"
-          rows="10"
-          value="<%= car.description %> "
-          placeholder="<%= car.description %> "
-        ></textarea>
+        <textarea name="description" cols="30" rows="10">
+ <%= car.description %></textarea
+        >
       </fieldset>
       <button type="submit">Submit</button>
     </form>

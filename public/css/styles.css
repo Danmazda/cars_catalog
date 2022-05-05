@@ -7,7 +7,6 @@
 body {
   background-color: black;
   color: white;
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,14 +22,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1em;
+  gap: 2rem;
+  padding: 1rem;
+  border-bottom: 2px gray solid;
 }
-#loginMenu fieldset {
-  padding: 1em;
-  border: none;
+header nav {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
 }
 input {
   padding: 0.2em;
@@ -38,9 +42,19 @@ input {
   border: none;
 }
 button {
-  padding: 0.2em;
-  border-radius: 0.1em;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.2em;
   border: none;
+  background-color: rgb(15, 170, 15);
+  border: 1px solid white;
+}
+button:hover {
+  transform: scale(0.9);
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* index route */
@@ -63,8 +77,11 @@ article.carCard img {
 }
 
 section#cards {
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -84,18 +101,23 @@ article.carCard {
 article div.cardControl {
   position: absolute;
   right: 1em;
-  top: 0;
-  border-radius: 0.3em;
-  background-color: aqua;
+  top: 1em;
   display: none;
+  flex-direction: column;
   width: 50%;
+  text-align: center;
+  box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .deleteConfirmation {
   position: absolute;
   background-color: rgb(44, 5, 124);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
   padding: 2rem;
-  right: 50%;
-  top: 50%;
   display: none;
   z-index: 9999;
 }
@@ -123,25 +145,51 @@ article div.cardControl {
   padding: 0.5em;
   background-color: black;
 }
+.update:hover {
+  cursor: pointer;
+}
 .delete {
   padding: 0.5em;
   background-color: rgb(172, 3, 3);
 }
+.delete:hover {
+  cursor: pointer;
+}
 footer {
-  background-color: blanchedalmond;
-  position: fixed;
-  bottom: 0;
-  color: black;
+  background-color: rgb(37, 35, 32);
+  color: rgb(211, 185, 10);
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 .updateForm {
-  display: none;
+  display: none !important;
+  position: absolute;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch center;
+  border: 2px solid white;
+  border-radius: 1em;
+  text-align: center;
+  background: url("/img/carbon.jpg");
+  z-index: 998;
+}
+.updateForm fieldset {
+  border: none;
+}
+.closeUpdate {
+  padding: 0.3em;
 }
 .closeUpdate:hover {
   color: darkorange;
   cursor: pointer;
 }
+.closeConfirmation {
+  background-color: rgb(177, 3, 3);
+}
 .active {
-  display: block !important;
+  display: flex !important;
 }
 
 #register {

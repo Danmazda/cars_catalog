@@ -39,8 +39,8 @@ export const deleteOne = async (req, res) => {
 
 export const updateOne = async (req, res) => {
   try {
+    const { id } = req.params;
     const {
-      id,
       name,
       img,
       toOneHundred,
