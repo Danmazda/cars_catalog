@@ -1,5 +1,8 @@
 const openMenus = document.querySelectorAll(".openMenu");
 
+//search functionality
+const search = document.querySelector(".search");
+const searchBT = document.querySelector(".fa-magnifying-glass");
 // delete modal
 const openDeleteConfirmations = document.querySelectorAll(".delete");
 const deleteConfirmations = document.querySelectorAll(".deleteConfirmation");
@@ -8,7 +11,10 @@ const closeConfirmation = document.querySelectorAll(".closeConfirmation");
 const openUpdateModals = document.querySelectorAll(".update");
 const updateForms = document.querySelectorAll(".updateForm");
 const closeUpdateModals = document.querySelectorAll(".closeUpdate");
-// description
+
+searchBT.addEventListener("click", () => {
+  location.href = `/search/${search.value}`;
+});
 
 openUpdateModals.forEach((openUpdateModal, index) => {
   openUpdateModal.addEventListener("click", () => {
@@ -38,7 +44,3 @@ const openConfirmation = openMenus.forEach((openMenu) => {
     }
   });
 });
-
-// document.querySelector("body").addEventListener("click", () => {
-//
-// });

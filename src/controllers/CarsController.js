@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import Car from "../models/Cars.Model.js";
 
 export const getAll = async (req, res) => {
@@ -75,6 +76,32 @@ export const postCard = async (req, res) => {
     await Car.create({ ...req.body });
     const cars = await Car.findAll({});
     const message = `${name} created succesfully`;
+    res.render("index", { cars, message });
+  } catch (error) {
+    res.status(500).send({ err: error.message });
+  }
+};
+
+export const searchCard = async (req, res) => {
+  try {
+    const { searchQuery } = req.params;
+    const cars = await Car.findAll({
+      where: {
+        name: {
+          [Op.or]: [
+            {
+              [Op.like]: `%${searchQuery}%`,
+            },
+            {
+              [Op.like]: `%${
+                searchQuery.charAt(0).toUpperCase() + searchQuery.slice(1)
+              }%`,
+            },
+          ],
+        },
+      },
+    });
+    let message;
     res.render("index", { cars, message });
   } catch (error) {
     res.status(500).send({ err: error.message });

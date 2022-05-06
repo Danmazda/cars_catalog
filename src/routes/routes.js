@@ -4,6 +4,7 @@ import {
   getAll,
   getOne,
   postCard,
+  searchCard,
   updateOne,
 } from "../controllers/CarsController.js";
 const routes = Router();
@@ -18,5 +19,6 @@ routes.get("/delete/:id", deleteOne);
 routes.get("/register", (req, res) => {
   res.render("register");
 });
+routes.get("/search/:searchQuery", searchCard);
 
 export default routes;

@@ -222,3 +222,14 @@ footer {
 #register fieldset textarea {
   width: 100%;
 }
+#search {
+  margin: 0.3em;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.fa-magnifying-glass:hover {
+  cursor: pointer;
+  color: darkorange;
+}
