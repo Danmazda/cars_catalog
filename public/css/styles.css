@@ -72,6 +72,8 @@ button:hover {
 div.flex-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
   background-color: antiquewhite;
   border-radius: 1em;
@@ -80,6 +82,7 @@ div.flex-row {
   background-color: rgb(245, 151, 36);
   border: white 0.15em solid;
 }
+
 article.carCard img {
   height: 10rem;
   width: 12rem;
@@ -232,4 +235,13 @@ footer {
 .fa-magnifying-glass:hover {
   cursor: pointer;
   color: darkorange;
+}
+
+@media only screen and (max-width: 600px) {
+  div.flex-row {
+    flex-wrap: wrap;
+  }
+  div.flex-row img {
+    margin: 0 auto;
+  }
 }
